@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: run-black
-        uses: psf/black@stable
+  
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: psf/black@stable
         with:
           options: "--check --verbose"
           src: "./src"
-          jupyter: true
-          version: "21.5b1"
+          use_pyproject: true
