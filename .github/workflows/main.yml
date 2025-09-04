@@ -11,14 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'  # or your preferred version
-
-      - name: Install Black
-        run: pip install black
-
       - name: run-black
         uses: psf/black@stable
         with:
