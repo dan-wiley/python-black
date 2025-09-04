@@ -19,5 +19,10 @@ jobs:
       - name: Install Black
         run: pip install black
 
-      - name: Run Black
-        run: black .  # Checks all files in the repo
+      - name: run-black
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "./src"
+          jupyter: true
+          version: "21.5b1"
